@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Home</h1>
+    <p>You have {{ tasks|length }} tasks.</p>
+
+    <ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.name }}
+            {% if task.completed %}
+                - Completed
+            {% else %}
+                - In progress
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
